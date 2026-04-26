@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
-const memberSchema = new mongoose.Schema({
-  name:    { type: String, required: true },
-  role:    { type: String, required: true },
-  project: { type: String, required: true },
-  photo:   { type: String, default: '' },
-  active:  { type: Boolean, default: true },
-}, { timestamps: true });
+// TODO: define a memberSchema with fields:
+// - name (required)
+// - role (required)
+// - project (required)
+// - photo (default empty string)
+// - active (default true)
+// add timestamps option
 
 module.exports = mongoose.model('Member', memberSchema);

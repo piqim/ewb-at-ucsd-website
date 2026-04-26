@@ -1,11 +1,8 @@
 const express = require('express');
 const router  = express.Router();
-const {
-  getProjects,
-  getProjectBySlug,
-} = require('../controllers/projectController');
+const { getProjects, getProjectBySlug } = require('../controllers/projectController');
 
-router.get('/',       getProjects);
-router.get('/:slug',  getProjectBySlug);
+// TODO: register GET / to getProjects
+// TODO: register GET /:slug to getProjectBySlug
 
 module.exports = router;
