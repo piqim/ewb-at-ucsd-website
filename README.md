@@ -7,6 +7,7 @@ Built and maintained by **Triton Web Developers (TWD) at UCSD**
 ## Table of Contents
 - [Project Overview](#project-overview)
 - [Branch Strategy](#branch-strategy)
+- [Branch: fullstack-mern-practice](#branch-fullstack-mern-practice)
 - [Tech Stack](#tech-stack)
 - [Design System](#design-system)
 - [Data Structure](#data-structure)
@@ -20,10 +21,24 @@ This repository contains the website for the Engineers Without Borders UC San Di
 
 The repository is structured across **three branches** with distinct purposes — a production frontend, a complete full-stack reference implementation, and a learning assignment skeleton.
 
+---
+
+## Branch Strategy
+
+```
+main                     ← Production frontend (JSON-based, Vercel hosted)
+fullstack-mern           ← Complete MERN stack (answer key — do not modify)
+fullstack-mern-practice  ← Assignment skeleton (student working branch)
+```
+
+Each branch serves a different audience and purpose. Read the section for your branch carefully before starting work.
+
+---
+
 ## Branch: `fullstack-mern-practice`
 
 ### Purpose
-This is the **practice assignment branch**. It is a skeleton version of `fullstack-mern` with all implementation logic and Tailwind classes stripped out and replaced with detailed `// TODO:` comments. All three team members rebuild the full-stack app from scratch — independently, on the same files, every week.
+This is the **student assignment branch**. It is a skeleton version of `fullstack-mern` with all implementation logic and Tailwind classes stripped out and replaced with detailed `// TODO:` comments. All three team members rebuild the full-stack app from scratch — independently, on the same files, every week.
 
 This branch is where **all student work happens**. The `fullstack-mern` branch is the answer key — reference it when genuinely stuck, but always attempt every task independently first.
 
@@ -106,7 +121,7 @@ git commit -m "feat: Week N — [what you built]"
 git push origin fullstack-mern-practice
 ```
 
-The project lead reviews all four PRs together with the members at the weekly meeting before merging.
+The project lead reviews all three PRs at the weekly meeting before merging.
 
 → **See [TODO.md](./TODO.md) for the full week-by-week breakdown.**
 
@@ -228,12 +243,10 @@ The `project` field must exactly match the project's `name` field for the Projec
 
 ## Team
 
-**Project Developer Lead:** [@piqim](https://github.com/piqim)
-**Contributing Developers:** [@contributor1](https://github.com/contributor1)
-**Contributing Developers:** [@contributor2](https://github.com/contributor2)
-**Contributing Developers:** [@contributor3](https://github.com/contributor3)
-**Contributing Developers:** [@contributor4](https://github.com/contributor4)
+**Project Lead:** [@piqim](https://github.com/piqim) — Triton Web Developers @ UCSD
 
 Built for **Engineers Without Borders UC San Diego** as a Triton Web Developers club project.
 
 ---
+
+*For questions about the codebase, contact the project lead or open an issue on GitHub.*
