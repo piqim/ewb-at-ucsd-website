@@ -1,0 +1,34 @@
+[
+    {
+      "id": "e1",
+      "title": "General Body Meeting — Week 3",
+      "description": "Our weekly all-hands meeting. All members welcome. Project updates, announcements, and social time.",
+      "date": "2026-05-05",
+      "location": "EBU1 Room 2315, UC San Diego",
+      "link": ""
+    },
+    {
+      "id": "e2",
+      "title": "Project Tijuana Design Review",
+      "description": "Internal design review for the Phase 2 water distribution system. TJ team members only.",
+      "date": "2026-05-10",
+      "location": "SME Room 248, UC San Diego",
+      "link": ""
+    },
+    {
+      "id": "e3",
+      "title": "K-12 Workshop — Mission Hills High School",
+      "description": "Delivering our bridge-building module to 9th grade engineering students.",
+      "date": "2026-05-14",
+      "location": "Mission Hills High School, San Marcos CA",
+      "link": ""
+    },
+    {
+      "id": "e4",
+      "title": "End of Year Social",
+      "description": "Celebrate the year's accomplishments with the whole EWB-UCSD family. Food, games, and good company.",
+      "date": "2026-06-01",
+      "location": "Sun God Lawn, UC San Diego",
+      "link": ""
+    }
+  ]

@@ -1,0 +1,98 @@
+[
+    {
+      "id": "m1",
+      "name": "Alex Rivera",
+      "role": "co-lead",
+      "project": "tijuana",
+      "major": "Civil Engineering",
+      "photo": ""
+    },
+    {
+      "id": "m2",
+      "name": "Priya Nair",
+      "role": "co-lead",
+      "project": "tijuana",
+      "major": "Environmental Engineering",
+      "photo": ""
+    },
+    {
+      "id": "m3",
+      "name": "Jordan Lee",
+      "role": "member",
+      "project": "tijuana",
+      "major": "Mechanical Engineering",
+      "photo": ""
+    },
+    {
+      "id": "m4",
+      "name": "Sofia Chen",
+      "role": "member",
+      "project": "tijuana",
+      "major": "Structural Engineering",
+      "photo": ""
+    },
+    {
+      "id": "m5",
+      "name": "Marcus Johnson",
+      "role": "co-lead",
+      "project": "kachieng",
+      "major": "Civil Engineering",
+      "photo": ""
+    },
+    {
+      "id": "m6",
+      "name": "Aisha Okonkwo",
+      "role": "co-lead",
+      "project": "kachieng",
+      "major": "Public Health",
+      "photo": ""
+    },
+    {
+      "id": "m7",
+      "name": "Daniel Kim",
+      "role": "member",
+      "project": "kachieng",
+      "major": "Electrical Engineering",
+      "photo": ""
+    },
+    {
+      "id": "m8",
+      "name": "Leila Ahmadi",
+      "role": "member",
+      "project": "kachieng",
+      "major": "Computer Science",
+      "photo": ""
+    },
+    {
+      "id": "m9",
+      "name": "Tyler Brooks",
+      "role": "co-lead",
+      "project": "k12",
+      "major": "Aerospace Engineering",
+      "photo": ""
+    },
+    {
+      "id": "m10",
+      "name": "Maya Patel",
+      "role": "co-lead",
+      "project": "k12",
+      "major": "Cognitive Science",
+      "photo": ""
+    },
+    {
+      "id": "m11",
+      "name": "Ethan Wong",
+      "role": "member",
+      "project": "k12",
+      "major": "Mathematics",
+      "photo": ""
+    },
+    {
+      "id": "m12",
+      "name": "Zoe Martinez",
+      "role": "member",
+      "project": "k12",
+      "major": "Biology",
+      "photo": ""
+    }
+  ]

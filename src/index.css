@@ -1,13 +1,49 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-gray-800 font-sans;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-semibold leading-tight;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  .btn-primary {
+    @apply bg-ewb-blue text-white px-6 py-3 rounded-full font-medium
+           hover:bg-blue-800 transition-colors duration-200;
+  }
+
+  .btn-gold {
+    @apply bg-ucsd-gold text-ucsd-navy px-6 py-3 rounded-full font-medium
+           hover:bg-yellow-600 transition-colors duration-200;
+  }
+
+  .btn-outline {
+    @apply border-2 border-white text-white px-6 py-3 rounded-full font-medium
+           hover:bg-white hover:text-ucsd-navy transition-colors duration-200;
+  }
+
+  .section-tag {
+    @apply text-ewb-blue text-xs font-bold tracking-widest uppercase mb-2;
+  }
+
+  .card {
+    @apply bg-white rounded-xl border border-gray-100 shadow-sm
+           hover:shadow-md transition-shadow duration-200;
+  }
+
+  .badge-active    { @apply bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full; }
+  .badge-planning  { @apply bg-gray-100  text-gray-700  text-xs font-bold px-3 py-1 rounded-full; }
+  .badge-completed { @apply bg-blue-100  text-blue-800  text-xs font-bold px-3 py-1 rounded-full; }
 }

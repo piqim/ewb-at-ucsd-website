@@ -1,0 +1,113 @@
+[
+    {
+      "slug": "tijuana",
+      "name": "Project Tijuana",
+      "tagline": "Cross-border water and infrastructure solutions.",
+      "description": "Project Tijuana partners with underserved communities just south of the US-Mexico border to design and implement sustainable water access and civil infrastructure. Our team works directly with community members to ensure solutions are locally owned and maintained long after our involvement ends.",
+      "status": "active",
+      "heroImage": "",
+      "region": "Tijuana, Mexico",
+      "timeline": [
+        {
+          "id": "tj-1",
+          "date": "Fall 2022",
+          "title": "Community Assessment",
+          "description": "Conducted initial site visits and community needs assessment with local partners."
+        },
+        {
+          "id": "tj-2",
+          "date": "Spring 2023",
+          "title": "Design Phase",
+          "description": "Completed engineering design for water distribution system."
+        },
+        {
+          "id": "tj-3",
+          "date": "Fall 2023",
+          "title": "Implementation Begins",
+          "description": "Ground broke on the first phase of the water distribution project."
+        },
+        {
+          "id": "tj-4",
+          "date": "Spring 2024",
+          "title": "Phase 1 Complete",
+          "description": "First distribution line serving 40 households successfully commissioned."
+        }
+      ],
+      "gallery": []
+    },
+    {
+      "slug": "kachieng",
+      "name": "Project Kachieng",
+      "tagline": "Sustainable engineering in rural Kenya.",
+      "description": "Project Kachieng works with the Kachieng community in rural Kenya to address critical infrastructure needs including clean water access, sanitation, and structural improvements. Our chapter collaborates with EWB-USA professional mentors and local community leaders to ensure every solution is appropriate, sustainable, and community-driven.",
+      "status": "active",
+      "heroImage": "",
+      "region": "Kachieng, Kenya",
+      "timeline": [
+        {
+          "id": "ka-1",
+          "date": "Fall 2021",
+          "title": "Project Initiation",
+          "description": "Formal partnership established with the Kachieng community."
+        },
+        {
+          "id": "ka-2",
+          "date": "Spring 2022",
+          "title": "Assessment Trip",
+          "description": "Team traveled to Kenya to conduct on-site water quality and infrastructure assessment."
+        },
+        {
+          "id": "ka-3",
+          "date": "Fall 2022",
+          "title": "Design Complete",
+          "description": "Borehole and hand pump system design finalized and approved by EWB-USA."
+        },
+        {
+          "id": "ka-4",
+          "date": "Spring 2023",
+          "title": "Implementation Trip",
+          "description": "Team successfully installed borehole pump serving over 300 community members."
+        }
+      ],
+      "gallery": []
+    },
+    {
+      "slug": "k12",
+      "name": "Project K-12",
+      "tagline": "STEM outreach for San Diego students.",
+      "description": "Project K-12 brings hands-on engineering education to San Diego area K-12 students, with a focus on underserved schools and underrepresented communities. Through workshops, mentorship, and design challenges, we inspire the next generation of engineers and show students from all backgrounds that engineering is for them.",
+      "status": "active",
+      "heroImage": "",
+      "region": "San Diego, CA",
+      "timeline": [
+        {
+          "id": "k12-1",
+          "date": "Fall 2022",
+          "title": "Program Launch",
+          "description": "Partnered with two San Diego Unified schools for pilot STEM workshop series."
+        },
+        {
+          "id": "k12-2",
+          "date": "Spring 2023",
+          "title": "Curriculum Developed",
+          "description": "Created six-module engineering curriculum covering water, energy, and structures."
+        },
+        {
+          "id": "k12-3",
+          "date": "Fall 2023",
+          "title": "Expansion",
+          "description": "Expanded to four schools, reaching over 200 students across the semester."
+        },
+        {
+          "id": "k12-4",
+          "date": "Spring 2024",
+          "title": "Design Challenge Event",
+          "description": "Hosted first annual EWB-UCSD Engineering Design Challenge with 80 student participants."
+        }
+      ],
+      "gallery": [
+        "https://placehold.co/600x400?text=Tijuana+1",
+        "https://placehold.co/600x400?text=Tijuana+2"
+      ]
+    }
+  ]

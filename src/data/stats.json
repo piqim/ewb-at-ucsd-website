@@ -1,0 +1,6 @@
+[
+    { "id": 1, "value": 60,  "suffix": "+", "label": "Active Members"  },
+    { "id": 2, "value": 3,               "label": "Active Projects"   },
+    { "id": 3, "value": 7,   "suffix": "+", "label": "Years of Impact"  },
+    { "id": 4, "value": 500, "suffix": "+", "label": "Lives Impacted"   }
+  ]
