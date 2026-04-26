@@ -1,4 +1,13 @@
 import { useState, useEffect } from 'react';
+import * as api from '../utils/api';
+
+// Maps the resource name used in components to the correct api function
+const resourceMap = {
+  projects: api.getProjects,
+  members:  api.getMembers,
+  events:   api.getEvents,
+  stats:    api.getStats,
+};
 
 function useFetch(resource) {
   const [data, setData]       = useState(null);
@@ -7,12 +16,19 @@ function useFetch(resource) {
 
   useEffect(() => {
     let cancelled = false;
-    setLoading(true);
+    const fetcher = resourceMap[resource];
 
-    import(`../data/${resource}.json`)
-      .then((module) => {
+    if (!fetcher) {
+      setError(new Error(`Unknown resource: ${resource}`));
+      setLoading(false);
+      return;
+    }
+
+    setLoading(true);
+    fetcher()
+      .then((result) => {
         if (!cancelled) {
-          setData(module.default);
+          setData(result);
           setLoading(false);
         }
       })

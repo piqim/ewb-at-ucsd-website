@@ -1,27 +1,8 @@
-// In the frontend-only branch, all data comes from local JSON files.
-// In the fullstack-mern branch, these functions are replaced with
-// axios calls to the Express API.
+const BASE = '/api';
 
-export const getProjects = () =>
-  import('../data/projects.json');
-
-export const getProjectBySlug = async (slug) => {
-  const mod      = await import('../data/projects.json');
-  const projects = mod.default ?? mod;
-  return projects.find(p => p.slug === slug) ?? null;
-};
-
-export const getMembersByProject = async (slug) => {
-  const mod     = await import('../data/members.json');
-  const members = mod.default ?? mod;
-  return slug ? members.filter(m => m.project === slug) : members;
-};
-
-export const getAllMembers = () =>
-  import('../data/members.json');
-
-export const getEvents = () =>
-  import('../data/events.json');
-
-export const getStats = () =>
-  import('../data/stats.json');
+export const getProjects        = () => fetch(`${BASE}/projects`).then(r => r.json());
+export const getProjectBySlug   = (slug) => fetch(`${BASE}/projects/${slug}`).then(r => r.json());
+export const getMembers         = () => fetch(`${BASE}/members`).then(r => r.json());
+export const getMembersByProject = (project) => fetch(`${BASE}/members/${encodeURIComponent(project)}`).then(r => r.json());
+export const getEvents          = () => fetch(`${BASE}/events`).then(r => r.json());
+export const getStats           = () => fetch(`${BASE}/stats`).then(r => r.json());

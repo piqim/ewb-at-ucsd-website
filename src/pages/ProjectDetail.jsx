@@ -1,5 +1,6 @@
+import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { useApi } from '../hooks/useFetch';
+import { getProjectBySlug, getMembersByProject } from '../utils/api';
 import Timeline from '../components/projects/Timeline';
 import TeamSection from '../components/projects/TeamSection';
 
@@ -11,8 +12,23 @@ const statusClass = {
 
 export default function ProjectDetail() {
   const { slug } = useParams();
-  const { data: projects, loading } = useApi('projects');
-  const { data: allMembers }        = useApi('members');
+  const [project, setProject] = useState(null);
+  const [members, setMembers] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(true);
+    getProjectBySlug(slug)
+      .then((data) => {
+        setProject(data);
+        return getMembersByProject(data.name);
+      })
+      .then((memberData) => {
+        setMembers(memberData);
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
+  }, [slug]);
 
   if (loading) {
     return (
@@ -21,8 +37,6 @@ export default function ProjectDetail() {
       </div>
     );
   }
-
-  const project = projects?.find((p) => p.slug === slug);
 
   if (!project) {
     return (
@@ -33,8 +47,6 @@ export default function ProjectDetail() {
       </div>
     );
   }
-
-  const projectMembers = allMembers?.filter((m) => m.project === project.name) ?? [];
 
   return (
     <main>
@@ -75,12 +87,12 @@ export default function ProjectDetail() {
       )}
 
       {/* Team */}
-      {projectMembers.length > 0 && (
+      {members.length > 0 && (
         <section className="py-16 px-4 bg-white">
           <div className="max-w-4xl mx-auto">
             <p className="section-tag">The People</p>
             <h2 className="text-2xl font-bold text-ucsd-navy mb-10">Project Team</h2>
-            <TeamSection members={projectMembers} />
+            <TeamSection members={members} />
           </div>
         </section>
       )}
