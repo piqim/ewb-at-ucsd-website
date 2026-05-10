@@ -4,12 +4,23 @@ const Project = require('../models/Project');
 // - fetch all projects from MongoDB sorted by createdAt descending
 // - return as JSON
 // - catch errors and return 500 with the error message
-const getProjects = async (req, res) => {};
+const getProjects = async (req, res) => {
+  try {
+    const projects = await Project.find().sort({ createdAt: -1 });
+    res.json(projects);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
 
-// TODO: implement getProjectBySlug
-// - find a single project matching req.params.slug
-// - return 404 if not found
-// - catch errors and return 500 with the error message
-const getProjectBySlug = async (req, res) => {};
+const getProjectBySlug = async (req, res) => {
+  try {
+    const project = await Project.findOne({ slug: req.params.slug });
+    if (!project) return res.status(404).json({ message: 'Project not found' });
+    res.json(project);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
 
 module.exports = { getProjects, getProjectBySlug };

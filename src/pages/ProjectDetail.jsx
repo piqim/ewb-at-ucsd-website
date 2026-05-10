@@ -13,15 +13,22 @@ const statusClass = {
 export default function ProjectDetail() {
   const { slug } = useParams();
 
-  // TODO: declare state for project, members, and loading
+  const [project, setProject] = useState(null);
+  const [members, setMembers] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // TODO:
-    // - set loading to true
-    // - call getProjectBySlug(slug)
-    // - on success, set project state, then call getMembersByProject with the project name
-    // - on second success, set members state and set loading to false
-    // - catch any errors and set loading to false
+    setLoading(true);
+    getProjectBySlug(slug)
+      .then((data) => {
+        setProject(data);
+        return getMembersByProject(data.name);
+      })
+      .then((memberData) => {
+        setMembers(memberData);
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
   }, [slug]);
 
   if (loading) {
@@ -44,54 +51,54 @@ export default function ProjectDetail() {
 
   return (
     <main>
-      <section className="">
-        <div className="">
-          <Link to="/" className="">← Back to Home</Link>
-          <div className="">
-            <h1 className="">{project.name}</h1>
+      <section className="bg-ucsd-navy text-white py-20 px-4">
+        <div className="max-w-5xl mx-auto">
+          <Link to="/" className="text-blue-300 hover:text-white text-sm mb-6 inline-block transition-colors">← Back to Home</Link>
+          <div className="flex items-center gap-3 mb-3">
+            <h1 className="text-4xl md:text-5xl font-bold">{project.name}</h1>
             <span className={statusClass[project.status] ?? 'badge-planning'}>
               {project.status.charAt(0).toUpperCase() + project.status.slice(1)}
             </span>
           </div>
-          <p className="">{project.tagline}</p>
+          <p className="text-blue-100 text-lg">{project.tagline}</p>
         </div>
       </section>
 
-      <section className="">
-        <div className="">
-          <p className="">Overview</p>
-          <h2 className="">About This Project</h2>
-          <p className="">{project.description}</p>
+      <section className="bg-white py-16 px-4">
+        <div className="max-w-5xl mx-auto">
+          <p className="section-tag">Overview</p>
+          <h2 className="text-3xl font-bold text-ucsd-navy mb-6">About This Project</h2>
+          <p className="text-gray-600 leading-relaxed">{project.description}</p>
         </div>
       </section>
 
       {project.timeline?.length > 0 && (
-        <section className="">
-          <div className="">
-            <p className="">Progress</p>
-            <h2 className="">Project Timeline</h2>
+        <section className="bg-gray-50 py-16 px-4">
+          <div className="max-w-5xl mx-auto">
+            <p className="section-tag">Progress</p>
+            <h2 className="text-3xl font-bold text-ucsd-navy mb-10">Project Timeline</h2>
             <Timeline items={project.timeline} />
           </div>
         </section>
       )}
 
       {members.length > 0 && (
-        <section className="">
-          <div className="">
-            <p className="">The People</p>
-            <h2 className="">Project Team</h2>
+        <section className="bg-white py-16 px-4">
+          <div className="max-w-5xl mx-auto">
+            <p className="section-tag">The People</p>
+            <h2 className="text-3xl font-bold text-ucsd-navy mb-10">Project Team</h2>
             <TeamSection members={members} />
           </div>
         </section>
       )}
 
-      <section className="">
-        <div className="">
-          <h2 className="">Want to Join This Project?</h2>
-          <p className="">
+      <section className="bg-ewb-blue text-white py-16 px-4 text-center">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold mb-4">Want to Join This Project?</h2>
+          <p className="text-blue-100 mb-8">
             We're always looking for passionate students to contribute their skills.
           </p>
-          <Link to="/get-involved" className="">Get Involved</Link>
+          <Link to="/get-involved" className="btn-gold">Get Involved</Link>
         </div>
       </section>
     </main>

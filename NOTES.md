@@ -1,30 +1,19 @@
-\## What is the difference between main and fullstack-mern in terms of how data reaches the React component? ##
+# Week 1 Notes
 
+## Reflection Questions
 
+**1. What is the difference between `main` and `fullstack-mern` in terms of how data reaches the React component?**
 
-The difference between main and fullstack-mern in terms of how data reaches the React component is that the components are static in main, whereas they can be changed outside of the code in fullstack-mern.
+In `main`, React imports data directly from local JSON files bundled with the app. In `fullstack-mern`, React fetches data from the Express API, which queries MongoDB. The components look the same but the data source is completely different.
 
+**2. What does Mongoose do that plain MongoDB driver doesn't?**
 
+Mongoose adds schema validation. You define what fields a document must have, what types they are, and which are required. The plain driver lets you insert anything without checking. Mongoose also adds helpful methods like `.findOne()` with query shortcuts and model-level hooks.
 
-\## What does Mongoose do that plain MongoDB driver doesn't? ##
+**3. Why does `ProjectDetail.jsx` chain two API calls instead of using `useApi`?**
 
+The second call needs data from the first. You call `getProjectBySlug(slug)` to get the project, then use `project.name` to call `getMembersByProject`. Since `useApi` fires once on mount with no way to pass a value from a previous call, you chain `.then()` manually so the second call waits for the first to finish.
 
+**4. What does the `proxy` field in `package.json` do and why is it needed?**
 
-Mongoose provides schemas and hooks that the default/plain driver doesn’t.
-
-
-
-\## Why does ProjectDetail.jsx chain two API calls instead of using useApi? ##
-
-
-
-It chains 2 API calls because the second call is dependent on the first one, and useApi does not do that.
-
-
-
-\## What does the proxy field in package.json do and why is it needed? ##
-
-
-
-The proxy field in package.json provides a server localhost:5000 (our backend) where API requests can be made.
-
+It forwards any request that the React dev server does not recognize to `http://localhost:5000`. So when React code calls `/api/projects`, the request goes to Express instead of failing. Without it, the fetch would hit port 3000 where there is no API.
