@@ -9,11 +9,13 @@ export default function Gallery() {
   // TODO: declare two state variables:
   // - active: tracks the currently selected filter, default ALL
   // - lightbox: tracks the currently open photo object { src, project }, default null
-
+  const[active, setActive] = useState(ALL);
+  const[lightbox, setLightbox] = useState(null);
   // TODO: build a `photos` array by flatMapping over projects.
   // Each project has a gallery array of image URL strings.
   // Map each URL to an object: { src, project: p.name }
   // Default to empty array if projects is null.
+  const photos = projects?.flatMap(());
 
   // TODO: build a `filters` array: [ALL, ...each project's name]
 

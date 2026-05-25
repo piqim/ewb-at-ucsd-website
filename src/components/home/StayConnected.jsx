@@ -72,8 +72,6 @@ export default function StayConnected() {
               <span className="" style={{}}>
                 View Profile →
               </span>
-
-            </a>
           </div>
 
         </div>

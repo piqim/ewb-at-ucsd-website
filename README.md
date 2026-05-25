@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+# ewb-at-ucsd-website
+A website designed and developed with Reactfor Engineers Without Borders at UCSD by Triton Web Developers at UCSD.
+>>>>>>> main
 # EWB-UCSD Website
 ### Engineers Without Borders — UC San Diego Chapter
 Built and maintained by **Triton Web Developers (TWD) at UCSD**
@@ -7,7 +12,11 @@ Built and maintained by **Triton Web Developers (TWD) at UCSD**
 ## Table of Contents
 - [Project Overview](#project-overview)
 - [Branch Strategy](#branch-strategy)
+<<<<<<< HEAD
 - [Branch: fullstack-mern-practice](#branch-fullstack-mern-practice)
+=======
+- [Branch: main](#branch-main)
+>>>>>>> main
 - [Tech Stack](#tech-stack)
 - [Design System](#design-system)
 - [Data Structure](#data-structure)
@@ -35,6 +44,7 @@ Each branch serves a different audience and purpose. Read the section for your b
 
 ---
 
+<<<<<<< HEAD
 ## Branch: `fullstack-mern-practice`
 
 ### Purpose
@@ -126,6 +136,104 @@ The project lead reviews all three PRs at the weekly meeting before merging.
 → **See [TODO.md](./TODO.md) for the full week-by-week breakdown.**
 
 
+=======
+## Branch: `main`
+
+### Purpose
+This is the **production branch**. It is a fully complete, frontend-only React site that reads data from static JSON files. This branch is deployed to Vercel and is what the public sees at the live URL. **Do not break this branch.**
+
+### Tech Stack
+| Layer | Tool |
+|---|---|
+| Framework | React 19 (Create React App) |
+| Styling | Tailwind CSS v3 |
+| Routing | React Router v6 |
+| Data | Static JSON files in `src/data/` |
+| Forms | Formspree |
+| Hosting | Vercel |
+
+### Getting Started
+
+**Prerequisites**
+- Node.js v18 or higher
+- npm v9 or higher
+
+**Installation**
+```bash
+git clone https://github.com/piqim/ewb-at-ucsd-website.git
+cd ewb-at-ucsd-website
+git checkout main
+npm install
+```
+
+**Environment Setup**
+
+Create a `.env` file at the root:
+```
+DANGEROUSLY_DISABLE_HOST_CHECK=true
+NODE_OPTIONS=--openssl-legacy-provider
+```
+
+**Run locally**
+```bash
+npm start
+```
+Visit `http://localhost:3000`
+
+### Folder Structure
+```
+src/
+├── assets/images/
+├── components/
+│   ├── common/
+│   │   ├── Navbar.jsx
+│   │   └── Footer.jsx
+│   ├── home/
+│   │   ├── Hero.jsx
+│   │   ├── StatsSection.jsx
+│   │   ├── ProjectCards.jsx
+│   │   ├── GetInvolvedCTA.jsx
+│   │   └── StayConnected.jsx
+│   └── projects/
+│       ├── Timeline.jsx
+│       └── TeamSection.jsx
+├── data/
+│   ├── projects.json
+│   ├── members.json
+│   ├── events.json
+│   └── stats.json
+├── hooks/
+│   └── useFetch.js       ← imports JSON files dynamically
+├── pages/
+│   ├── Home.jsx
+│   ├── About.jsx
+│   ├── ProjectDetail.jsx
+│   ├── GetInvolved.jsx
+│   ├── Gallery.jsx
+│   ├── Contact.jsx
+│   └── NotFound.jsx
+└── utils/
+    └── api.js            ← named helper functions over useFetch
+```
+
+### How Data Works
+Data is loaded from the `src/data/` JSON files using a custom `useFetch` hook:
+```js
+const { data: projects, loading } = useApi('projects');
+// loads from src/data/projects.json
+```
+
+To update content (projects, members, events, stats), edit the corresponding JSON file in `src/data/`. No backend required.
+
+### Formspree Setup
+The Contact and Get Involved forms submit to Formspree. To configure:
+1. Create an account at [formspree.io](https://formspree.io)
+2. Create a new form and copy your Form ID
+3. Replace `YOUR_FORMSPREE_ID` in both `Contact.jsx` and `GetInvolved.jsx`
+
+### Deployment
+This branch auto-deploys to Vercel on every push to `main`. No manual steps required. Vercel is configured to use `main` as the production branch.
+>>>>>>> main
 
 ---
 
