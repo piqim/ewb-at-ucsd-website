@@ -10,7 +10,9 @@ module.exports = connectDB;
 const connectDB = async () => {
     try {
         const connection = mongoose.connect(process.env.MONGO_URI);
-    } catch () {
+        console.log('MongoDB connected: ${conn.connection.honest}')
+    } catch (error) {
+        console.error('Error: ${error.message}');
         process.exit(1);
     }
 }
