@@ -6,3 +6,11 @@ const mongoose = require('mongoose');
 // - logs the error message and exits the process on failure
 
 module.exports = connectDB;
+
+const connectDB = async () => {
+    try {
+        const connection = mongoose.connect(process.env.MONGO_URI);
+    } catch () {
+        process.exit(1);
+    }
+}

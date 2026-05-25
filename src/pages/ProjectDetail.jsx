@@ -15,6 +15,10 @@ export default function ProjectDetail() {
 
   // TODO: declare state for project, members, and loading
 
+  const [project, setProject] = useState(null);
+  const [members, setMembers] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     // TODO:
     // - set loading to true
@@ -22,6 +26,32 @@ export default function ProjectDetail() {
     // - on success, set project state, then call getMembersByProject with the project name
     // - on second success, set members state and set loading to false
     // - catch any errors and set loading to false
+    let loading = true;
+    async function load() {
+      try {
+        setLoading(true);
+        const proj = await getProjectBySlug(slug);
+        if (!loading) return;
+        setProject(proj);
+        const team = await getMembersByProject(proj.name);
+        if (!loading) return;
+        setMembers(team || []);
+      } catch (err) {
+        console.error(err);
+        if (loading) {
+          setProject(null);
+          setMembers([]);
+        }
+      } finally {
+        if (loading) setLoading(false);
+      }
+    }
+
+    load();
+
+    return () => {
+      loading = false;
+    };
   }, [slug]);
 
   if (loading) {
@@ -75,7 +105,7 @@ export default function ProjectDetail() {
         </section>
       )}
 
-      {members.length > 0 && (
+      {members?.length > 0 && (
         <section className="">
           <div className="">
             <p className="">The People</p>

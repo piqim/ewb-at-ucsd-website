@@ -64,11 +64,11 @@ export default function StatsSection() {
     <section className="bg-ewb-blue text-white py-14 px-4">
       {/* TODO: max-w-5xl, mx-auto, 2 columns on mobile (grid-cols-2),
           4 on desktop (md:grid-cols-4), gap-8, text centered */}
-      <div className="max-w-5x1 mx-auto grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
         {stats.map((stat) => (
           <div key={stat.id}>
             {/* TODO: text-4xl, font-bold */}
-            <p className="text-4x1 font-bold">
+            <p className="text-4xl font-bold">
               {stat.prefix ?? ''}
               <CountUp target={stat.value} />
               {stat.suffix ?? ''}

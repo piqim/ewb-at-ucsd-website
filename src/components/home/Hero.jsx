@@ -16,7 +16,7 @@ export default function Hero() {
 
       {/* TODO: constrain content width (max-w-5xl), center it (mx-auto),
           and center-align all text */}
-      <div className="relative max-w-5x1 mx-auto center-align">
+      <div className="relative max-w-5xl mx-auto text-center">
 
         {/* TODO: small uppercase label above the heading.
             Use the custom .section-tag class + gold text color (text-ucsd-gold) */}
@@ -24,7 +24,7 @@ export default function Hero() {
 
         {/* TODO: large bold heading — text-4xl on mobile, text-6xl on desktop.
             Use font-bold, tight line height (leading-tight), margin below (mb-6) */}
-        <h1 className="text-4x1 md:text-6x1 font-bold leading-tight mb-6">
+        <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
           Engineering a Better World,<br />
           {/* TODO: the second line should be highlighted in ucsd-gold */}
           <span className="text-ucsd-gold">One Community at a Time</span>
@@ -33,7 +33,7 @@ export default function Hero() {
         {/* TODO: subtitle paragraph — text-lg on mobile, text-xl on desktop.
             Use a light blue-tinted color (text-blue-100) for contrast on the
             dark background. Max width of ~2xl, centered, margin below (mb-10) */}
-        <p className="text-lg md: text-xl text-blue-100 max-w-2x1 mx-auto mb-10">
+        <p className="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto mb-10">
           UC San Diego students partnering with underserved communities to design
           sustainable engineering solutions that create lasting change.
         </p>

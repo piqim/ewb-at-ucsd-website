@@ -18,7 +18,7 @@ export default function ProjectCards() {
     <section className="bg-gray-50 py-16 px-4">
 
       {/* TODO: constrain to max-w-5xl, centered with mx-auto */}
-      <div className="max-w-5x1 mx-auto">
+      <div className="max-w-5xl mx-auto">
 
         {/* TODO: small section label — use .section-tag class, centered */}
         <p className="section-tag text-center">Our Work</p>

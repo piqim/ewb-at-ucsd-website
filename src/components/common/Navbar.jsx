@@ -106,7 +106,7 @@ export default function Navbar() {
             <div className="w-5 flex flex-col gap-1">
               {/* Line 1 — TODO: block, h-0.5, bg-white, transition-all duration-200.
                   When menuOpen: rotate-45 translate-y-1.5 to form top of X */}
-              <span className={`block h-0.5 bg-white transition-all duration-200 ${menuOpen ? '-rotate-45 -translate-y-1.5' : ''}`} />
+              <span className={`block h-0.5 bg-white transition-all duration-200 ${menuOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
               {/* Line 2 — TODO: same base styles.
                   When menuOpen: opacity-0 to hide the middle line */}
               <span className={`block h-0.5 bg-white transition-all duration-200 ${menuOpen ? 'opacity-0' : ''}`} />

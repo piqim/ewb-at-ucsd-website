@@ -19,7 +19,7 @@ export default function GetInvolved() {
         body: JSON.stringify(data),
       });
       /* if-else statement if res.ok, and else => alet if submitted or not. */
-      if (res.ok) { /*TODO*/ ); form.reset(); }
+      if (res.ok) { /*TODO*/ ; form.reset(); }
       else { /*TODO*/ }
     } catch { alert('Network error. Please try again.'); }
   };
