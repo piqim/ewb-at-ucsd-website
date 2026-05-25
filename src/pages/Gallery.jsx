@@ -11,18 +11,16 @@ export default function Gallery() {
   // - lightbox: tracks the currently open photo object { src, project }, default null
   const[active, setActive] = useState(ALL);
   const[lightbox, setLightbox] = useState(null);
-  // TODO: build a `photos` array by flatMapping over projects.
-  // Each project has a gallery array of image URL strings.
-  // Map each URL to an object: { src, project: p.name }
-  // Default to empty array if projects is null.
-  const photos = projects?.flatMap(());
+  const photos = projects?.flatMap((p) =>
+    (p.gallery ?? []).map((src) => ({
+      src,
+      project: p.name,
+      slug: p.slug
+    }))
+  );
 
-  // TODO: build a `filters` array: [ALL, ...each project's name]
-
-  // TODO: build a `visible` array:
-  // if active === ALL, show all photos
-  // otherwise filter to only photos where photo.project === active
-
+  const filters = [ALL, ...ALL(projects?.map((p) => p.name) ?? [])];
+  const visible = active === ALL ? photos : photos.filter((ph) => ph.project === active);
   return (
     <main>
 
