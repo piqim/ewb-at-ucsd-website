@@ -4,4 +4,6 @@ const { getEvents } = require('../controllers/eventController');
 
 // TODO: register GET / to getEvents
 
+router.get('/', getEvents);
+
 module.exports = router;

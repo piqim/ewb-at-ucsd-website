@@ -4,4 +4,6 @@ const { getStats } = require('../controllers/statController');
 
 // TODO: register GET / to getStats
 
+router.get('/', getStats);
+
 module.exports = router;
