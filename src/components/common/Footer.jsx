@@ -27,11 +27,8 @@ export default function Footer() {
 
           {/* Col 1+2 — Brand */}
           <div className="md:col-span-2">
-            <div className="bg-ucsd-gold text-ucsd-navy font-bold text-sm px-3 py-1.5 rounded inline-block mb-4">
-              EWB-UCSD
-            </div>
             <p className="text-white/60 text-sm leading-relaxed max-w-xs">
-              Engineers Without Borders — UC San Diego Chapter.
+              <strong>Engineers Without Borders — UC San Diego Chapter.</strong> A student-led organization dedicated to designing sustainable engineering solutions for underserved communities worldwide.
               A chapter of EWB-USA, designed and built by Triton Web Developers at UCSD.
             </p>
             <p className="text-white/40 text-xs mt-4">
@@ -39,7 +36,7 @@ export default function Footer() {
             </p>
             <div className="flex gap-3 mt-5">
               <a
-                href="https://instagram.com/ewb-ucsd"
+                href="https://www.instagram.com/ewb.at.ucsd/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/10 hover:bg-instagram text-white text-xs font-medium px-3 py-1.5 rounded-full transition-colors duration-150"

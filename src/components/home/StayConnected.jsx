@@ -27,7 +27,7 @@ export default function StayConnected() {
             {/* Instagram card */}
             <div className="flex-1 max-w-sm mx-auto w-full">
               <a
-                href="https://www.instagram.com/ewb.ucsd/"
+                href="https://www.instagram.com/ewb.at.ucsd/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="card p-8 flex flex-col items-center justify-center h-full gap-4 hover:border-pink-300 group"
@@ -38,7 +38,7 @@ export default function StayConnected() {
                   </svg>
                 </div>
                 <div>
-                  <p className="font-bold text-ucsd-navy text-lg">@ewb.ucsd</p>
+                  <p className="font-bold text-ucsd-navy text-lg">@ewb.at.ucsd</p>
                   <p className="text-gray-500 text-sm">Follow us on Instagram</p>
                 </div>
                 <span className="text-sm font-semibold group-hover:underline" style={{ color: '#C13584' }}>

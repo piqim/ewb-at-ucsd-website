@@ -50,12 +50,12 @@ export default function Contact() {
               <div>
                 <p className="font-semibold text-ucsd-navy mb-1">Instagram</p>
                 <a
-                  href="https://www.instagram.com/ewb.ucsd/"
+                  href="https://www.instagram.com/ewb.at.ucsd/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-ewb-blue hover:underline"
                 >
-                  @ewb.ucsd
+                  @ewb.at.ucsd
                 </a>
               </div>
               <div>
