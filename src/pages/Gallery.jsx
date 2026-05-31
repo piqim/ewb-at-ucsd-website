@@ -6,9 +6,6 @@ const ALL = 'All';
 export default function Gallery() {
   const { data: projects, loading } = useApi('projects');
 
-  // TODO: declare two state variables:
-  // - active: tracks the currently selected filter, default ALL
-  // - lightbox: tracks the currently open photo object { src, project }, default null
   const[active, setActive] = useState(ALL);
   const[lightbox, setLightbox] = useState(null);
   const photos = projects?.flatMap((p) =>
@@ -17,41 +14,37 @@ export default function Gallery() {
       project: p.name,
       slug: p.slug
     }))
-  );
+  ) ?? [];
 
-  const filters = [ALL, ...ALL(projects?.map((p) => p.name) ?? [])];
+  const filters = [ALL, ...(projects?.map((p) => p.name) ?? [])];
   const visible = active === ALL ? photos : photos.filter((ph) => ph.project === active);
   return (
     <main>
 
       {/* HERO */}
-      {/* TODO: ucsd-navy background, white text, py-20, px-4, centered */}
-      <section className="">
-        <div className="">
-          <p className="">Our Work in Photos</p>
-          <h1 className="">Gallery</h1>
-          <p className="">
+      <section className="bg-ucsd-navy text-white text-sm py-20 px-4 text-center">
+        <div className="section-tag">
+          <p className="text-ucssd-gold">Our Work in Photos</p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Gallery</h1>
+          <p className="text-blue-100 text-lg max-w-wl mx-auto">
             A look at our teams in the field, on campus, and in the community.
           </p>
         </div>
       </section>
 
       {/* FILTER TABS */}
-      {/* TODO: white background, py-8, px-4, border-b border-gray-100 */}
-      <section className="">
-        {/* TODO: max-w-5xl, mx-auto, flex wrap, gap-3, justify-center */}
-        <div className="">
+      <section className="bg-white py-8 px-4 border-b border-gray-100">
+        <div className="max-w-5x1 mx-auto flex flex-wrap gap-3 justify-center">
           {/* TODO: map over filters array — not defined yet, see above */}
           {(filters ?? []).map((f) => (
             <button
               key={f}
-              // TODO: call setActive(f) on click
-              onClick={() => {}}
-              // TODO: pill shape — rounded-full, px-5 py-2, text-sm, font-semibold,
-              // transition-colors duration-150.
-              // Active (f === active): bg-ewb-blue text-white
-              // Inactive: bg-gray-100 text-gray-600 hover:bg-gray-200
-              className=""
+              onClick={() => setActive(f)}
+              className={`px-5 py-2 rounded-full text-sm font-semibold transition-colors duration-150
+                ${active === f
+                  ? 'bg-ewb-blue text-white'
+                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                }`}
             >
               {f}
             </button>
@@ -60,29 +53,24 @@ export default function Gallery() {
       </section>
 
       {/* PHOTO GRID */}
-      {/* TODO: bg-gray-50, py-12, px-4, min-h-[40vh] */}
-      <section className="">
-        {/* TODO: max-w-5xl, mx-auto */}
-        <div className="">
+      <section className="bg-gray-50 py-12 px-4 min-h-[40vh]">
+        <div className="max-w-5xl mx-auto">
           {loading ? (
-            <p className="">Loading gallery…</p>
-          ) : !visible?.length ? (
-            <p className="">No photos yet — check back after our next trip!</p>
+            <p className="text-center text-gray-400 py-20">Loading gallery…</p>
+          ) : !visible.length ? (
+            <p className="text-center text-gray-400 py-20">
+              No photos yet — check back after our next trip!</p>
           ) : (
-            // TODO: masonry layout — columns-2 md:columns-3, gap-4, space-y-4
-            <div className="">
+            <div className="columns-2 md:columns-3 gap-4 space-y-4">
               {(visible ?? []).map((photo, i) => (
-                // TODO: break-inside-avoid, cursor-pointer, overflow-hidden,
-                // rounded-xl, group class for hover effects.
-                // onClick should set lightbox to this photo object.
-                <div key={i} className="" onClick={() => {}}>
-                  {/* TODO: w-full, object-cover.
-                      On hover: group-hover:scale-105
-                      transition-transform duration-300 */}
+                <div
+                  key={i}
+                  className="break-inside-avoid cursor-pointer overflow-hidden rounded-xl group"
+                  onClick={() => setLightbox(photo)}>
                   <img
                     src={photo.src}
                     alt={`${photo.project} photo ${i + 1}`}
-                    className=""
+                    className="w-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
               ))}
@@ -92,24 +80,19 @@ export default function Gallery() {
       </section>
 
       {/* LIGHTBOX */}
-      {/* TODO: only render when lightbox state is not null */}
       {false && (
-        // TODO: fixed fullscreen overlay — fixed inset-0, bg-black/80, z-50,
-        // flex centered, p-4.
-        // onClick on the overlay should close the lightbox (set to null)
-        <div className="" onClick={() => {}}>
-          {/* TODO: max-w-3xl, w-full.
-              stopPropagation on click so the image doesn't close the lightbox */}
-          <div className="" onClick={(e) => e.stopPropagation()}>
-            {/* TODO: w-full, rounded-xl, object-contain, max-h-[80vh] */}
-            <img src={lightbox?.src} alt={lightbox?.project} className="" />
-            {/* TODO: white text, text-sm, text-center, mt-3, opacity-70 */}
-            <p className="">{lightbox?.project}</p>
-            {/* TODO: absolute close button — -top-4 -right-4, w-9 h-9,
-                bg-white, text-gray-800, rounded-full, font-bold,
-                flex centered, hover:bg-gray-100.
-                onClick should close the lightbox. */}
-            <button onClick={() => {}} className="">✕</button>
+        <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+        onClick={() => setLightbox(null)}>
+          <div className="relative max-w-3x1 w-full" onClick={(e) => e.stopPropagation()}>
+            <img
+              src={lightbox?.src}
+              alt={lightbox?.project}
+              className="w-full rounded-xl object-contain max-h-[80vh]" />
+            <p className="text-white text-center mt-3 opacity-70">{lightbox?.project}</p>
+            <button onClick={() => setLightbox(null)}
+              className="absolute -top-4v-right-4 w-9 h-9 bg-white text-gray-800 rounded-full
+                font-bold text-lg flex items-center justify-center hover:bg-gray-100"
+                >✕</button>
           </div>
         </div>
       )}
